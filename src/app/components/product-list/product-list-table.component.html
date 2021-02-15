@@ -12,9 +12,6 @@
         <tr *ngFor="let tempProduct of products">
             <td class="align-middle">
                <img src="{{ tempProduct.imageUrl}}" height="50"/>
-               <!-- {{ tempProduct.imageUrl}} -->
-               <!-- <img src="assets/images/products/placeholder.png" height="50"/> -->
-              <!-- {{tempProduct.image_url}}  -->
             </td>
             <td>{{tempProduct.name}}</td>
             <td>{{tempProduct.unitPrice | currency:  'RON'}}</td>
