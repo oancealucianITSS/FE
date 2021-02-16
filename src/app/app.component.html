@@ -11,20 +11,20 @@
       <nav class="navbar-sidebar">
         <ul class="list-unstyled navbar-list">
           <li>
-            <a href="#">#Casa si gradina</a>
+            <a routerLink="/category/1" routerLinkActive="active-link">Casa si gradina</a>
           </li>
           <li>
-            <a href="#">#Animale de companie</a>
+            <a routerLink="/category/2" routerLinkActive="active-link">Animale de companie</a>
+          </li>
+          <!-- <li>
+            <a href="#">Gadgeturi</a>
           </li>
           <li>
-            <a href="#">#Gadgeturi</a>
+            <a href="#">Sport</a>
           </li>
           <li>
-            <a href="#">#Sport</a>
-          </li>
-          <li>
-            <a href="#">#Alte chestii faine</a>
-          </li>
+            <a href="#">Alte chestii faine</a>
+          </li> -->
         </ul>
       </nav>
     </div>
@@ -59,7 +59,7 @@
   <!-- END HEADER DESKTOP-->
 
   <!-- MAIN CONTENT-->
-  <app-product-list></app-product-list>
+  <router-outlet></router-outlet>
 
 
   </div>
