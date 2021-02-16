@@ -4,15 +4,28 @@
             <div class="row">
 
                 <!--loop over collection of products  -->
-               <div *ngFor="let tempProduct of products" class="col-md-3">
-               
-                 <div class="product-box">
-                    <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
-                    <h1>{{tempProduct.name}}</h1>
-                    <div class="price">{{tempProduct.unitPrice | currency:'RON'}}</div>
-                    <a href="#" class="primary-btn">Add to cart</a>
-                 </div>
-               </div>
+                <div *ngFor="let tempProduct of products" class="col-md-3">
+
+                    <div class="product-box">
+                        <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+                        <h1>{{tempProduct.name}}</h1>
+                        <div class="price">{{tempProduct.unitPrice | currency:'RON'}}</div>
+                        <a href="#" class="primary-btn">Add to cart</a>
+                    </div>
+
+                </div>
+                <!-- if products are emptythen display a message -->
+                <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12" role="alert">
+                    Nu au fost gasite produse!
+                    <pre></pre>
+                    Pentru a gasi produsul dorit, incearca urmatoarele:
+                    <pre></pre>
+                   * Verifica daca ai scris corect termenii.
+                   <pre></pre>
+                   * Incearca din nou, folosind o cautare mai generala.
+
+                </div>
+
             </div>
         </div>
     </div>
