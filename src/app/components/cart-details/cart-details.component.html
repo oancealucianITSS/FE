@@ -1,0 +1,71 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div *ngIf="cartItems.length > 0">
+
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="20%">Imagine produs</th>
+                        <th width="50%">Detalii produs</th>
+                        <th width="30%"></th>
+                    </tr>
+                    <tr *ngFor="let tempCartItem of cartItems">
+                        <td>
+                            <img src="{{tempCartItem.imageUrl}}" class="img-responsive" width="150px" />
+                        </td>
+                        <td>
+                            <p>{{tempCartItem.name}}</p>
+                            <p>{{tempCartItem.unitPrice}} RON</p>
+                        </td>
+                        <td>
+                            <div class="items">
+                                <label> Cantitate:</label> 
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <button (click)="incrementQuantity(tempCartItem)" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-plus"></i>    
+                                        </button>
+                                    </div>
+
+                                    <div class="col ml-4 mr-2">
+                                        {{tempCartItem.quantity}}
+                                    </div>
+
+                                    <div class="col">
+                                        <button (click)="decrementQuantity(tempCartItem)"  class="btn btn-primary btn-sm">
+                                            <i class="fas fa-minus"></i>    
+                                        </button>
+                                    </div>
+
+                                    <div class="col-8"></div>
+                                </div>
+                            </div>
+                            <button (click)="remove(tempCartItem)" class="btn btn-primary btn-sm mt-2">Sterge</button>
+                            <p class="mt-2">Subtotal: {{tempCartItem.quantity * tempCartItem.unitPrice }} RON</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td style="font-weight: bold">
+                            <p>Pret total: {{totalPrice}} RON</p>
+                            <p>Cantitate totala: {{totalQuantity}}</p>
+                            <p>Livrare gratuita !
+                                <!-- <p>  - pentru comenzi cu valoare egala sau mai mare de 90 RON livrarea este gratuita
+                             <p>  - pentru comenzi cu valoare mai mica de 90 RON : Posta Romana 14 RON (3-5 zile lucratoare)
+                                                                                 Curierat 28 RON (2-3 zile lucratoare) -->
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <!-- if cart is empty then display amessage -->
+            <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="alert">
+                Cosul tau de cumparaturi este gol.
+            </div>
+        </div>
+    </div>
+</div>

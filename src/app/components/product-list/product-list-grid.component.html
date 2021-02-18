@@ -16,8 +16,8 @@
                             <h1>{{tempProduct.name}}</h1>
                         </a>
 
-                        <div class="price">{{tempProduct.unitPrice | currency:'RON'}}</div>
-                        <a href="#" class="primary-btn">Adauga in cos</a>
+                        <div class="price">{{tempProduct.unitPrice }} RON</div>
+                        <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Adauga in cos</button>
                     </div>
 
                 </div>
