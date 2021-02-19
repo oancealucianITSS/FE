@@ -1,0 +1,340 @@
+<div class="main-content page-m">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+            <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+
+                <!-- Cutomer form group -->
+                <div formGroupName="customer" class="form-area">
+                    <h3>Detalii client</h3>
+                    <div class="row">
+                        <div class="col-md-2"><label>Nume</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="firstName" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Prenume</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="lastName" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Email</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="email" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Shipping adress -->
+                <div formGroupName="shippingAddress" class="form-area">
+                    <h3>Date livrare</h3>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Tara</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <select formControlName="country">
+                                    <option>ROMANIA</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Strada</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="street" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Oras</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="city" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Judet</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <select formControlName="state" name="Judet">
+                                    <option value="AB">Alba</option>
+                                    <option value="AG">Arges</option>
+                                    <option value="AR">Arad</option>
+                                    <option value="B">Bucuresti</option>
+                                    <option value="BC">Bacau</option>
+                                    <option value="BH">Bihor</option>
+                                    <option value="BN">Bistrita</option>
+                                    <option value="BR">Braila</option>
+                                    <option value="BT">Botosani</option>
+                                    <option value="BV">Brasov</option>
+                                    <option value="BZ">Buzau</option>
+                                    <option value="CJ">Cluj</option>
+                                    <option value="CL">Calarasi</option>
+                                    <option value="CS">Caras-Severin</option>
+                                    <option value="CT">Constanta</option>
+                                    <option value="CV">Covasna</option>
+                                    <option value="DB">Dambovita</option>
+                                    <option value="DJ">Dolj</option>
+                                    <option value="GJ">Gorj</option>
+                                    <option value="GL">Galati</option>
+                                    <option value="GR">Giurgiu</option>
+                                    <option value="HD">Hunedoara</option>
+                                    <option value="HG">Harghita</option>
+                                    <option value="IF">Ilfov</option>
+                                    <option value="IL">Ialomita</option>
+                                    <option value="IS">Iasi</option>
+                                    <option value="MH">Mehedinti</option>
+                                    <option value="MM">Maramures</option>
+                                    <option value="MS">Mures</option>
+                                    <option value="NT">Neamt</option>
+                                    <option value="OT">Olt</option>
+                                    <option value="PH">Prahova</option>
+                                    <option value="SB">Sibiu</option>
+                                    <option value="SJ">Salaj</option>
+                                    <option value="SM">Satu-Mare</option>
+                                    <option value="SV">Suceava</option>
+                                    <option value="TL">Tulcea</option>
+                                    <option value="TM">Timis</option>
+                                    <option value="TR">Teleorman</option>
+                                    <option value="VL">Valcea</option>
+                                    <option value="VN">Vrancea</option>
+                                    <option value="VS">Vaslui</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Cod postal</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="zipCode" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add check box to copy shipping adress to billing -->
+                <div class="input-space">
+                    <label class="au-checkbox">
+                        <input type="checkbox" (change)="copyShippingAddressToBillingAddress($event)">
+                        <span class="au-checkmark"></span>Adresa de facturare este aceeasi cu adresa de livrare
+                    </label>
+                </div>
+                <!-- Billing adress -->
+                <div formGroupName="billingAddress" class="form-area">
+                    <h3>Date de facturare</h3>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Tara</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <select formControlName="country">
+                                    <option>ROMANIA</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Strada</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="street" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Oras</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="city" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Judet</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <select formControlName="state" name="Judet">
+                                    <option value="AB">Alba</option>
+                                    <option value="AG">Arges</option>
+                                    <option value="AR">Arad</option>
+                                    <option value="B">Bucuresti</option>
+                                    <option value="BC">Bacau</option>
+                                    <option value="BH">Bihor</option>
+                                    <option value="BN">Bistrita</option>
+                                    <option value="BR">Braila</option>
+                                    <option value="BT">Botosani</option>
+                                    <option value="BV">Brasov</option>
+                                    <option value="BZ">Buzau</option>
+                                    <option value="CJ">Cluj</option>
+                                    <option value="CL">Calarasi</option>
+                                    <option value="CS">Caras-Severin</option>
+                                    <option value="CT">Constanta</option>
+                                    <option value="CV">Covasna</option>
+                                    <option value="DB">Dambovita</option>
+                                    <option value="DJ">Dolj</option>
+                                    <option value="GJ">Gorj</option>
+                                    <option value="GL">Galati</option>
+                                    <option value="GR">Giurgiu</option>
+                                    <option value="HD">Hunedoara</option>
+                                    <option value="HG">Harghita</option>
+                                    <option value="IF">Ilfov</option>
+                                    <option value="IL">Ialomita</option>
+                                    <option value="IS">Iasi</option>
+                                    <option value="MH">Mehedinti</option>
+                                    <option value="MM">Maramures</option>
+                                    <option value="MS">Mures</option>
+                                    <option value="NT">Neamt</option>
+                                    <option value="OT">Olt</option>
+                                    <option value="PH">Prahova</option>
+                                    <option value="SB">Sibiu</option>
+                                    <option value="SJ">Salaj</option>
+                                    <option value="SM">Satu-Mare</option>
+                                    <option value="SV">Suceava</option>
+                                    <option value="TL">Tulcea</option>
+                                    <option value="TM">Timis</option>
+                                    <option value="TR">Teleorman</option>
+                                    <option value="VL">Valcea</option>
+                                    <option value="VN">Vrancea</option>
+                                    <option value="VS">Vaslui</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Cod postal</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="zipCode" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Credit card -->
+
+                <div formGroupName="creditCard" class="form-area">
+                    <h3>Plata</h3>
+                    <div class="row">
+                        <div class="col-md-2"><label>Tip card</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <select formControlName="cardType">
+                                    <option>VISA</option>
+                                    <option>MASTERCARD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Numele scris pe card</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="nameOnCard" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Numar card</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="cardNumber" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Cod securitate card</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="securityCode" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>Luna expirare card</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <select formControlName="expirationMonth">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"><label>An expirare card</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <select formControlName="expirationYear">
+                                    <option>2021</option>
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+                                    <option>2026</option>
+                                    <option>2027</option>
+                                    <option>2028</option>
+                                    <option>2029</option>
+                                    <option>2030</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Order details -->
+                <div class="form-area">
+                    <h3>Sumar comanda</h3>
+
+                    <p>Total cantitate : {{totalQuantity}}</p>
+                    <p>Livrare gratuita</p>
+                    <p>Pret Total: {{totalQuantity }} RON</p>
+                </div>
+                <!-- Submit button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-info">Trimite comanda</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
