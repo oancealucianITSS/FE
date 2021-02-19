@@ -43,8 +43,10 @@
                         <div class="col-md-2"><label>Tara</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
-                                <select formControlName="country">
-                                    <option>ROMANIA</option>
+                                <select formControlName="country" (change)="getStates('shippingAddress')">
+                                    <option *ngFor="let country of countries" [ngValue]="country">
+                                        {{country.name}}
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -72,49 +74,10 @@
                         <div class="col-md-2"><label>Judet</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
-                                <select formControlName="state" name="Judet">
-                                    <option value="AB">Alba</option>
-                                    <option value="AG">Arges</option>
-                                    <option value="AR">Arad</option>
-                                    <option value="B">Bucuresti</option>
-                                    <option value="BC">Bacau</option>
-                                    <option value="BH">Bihor</option>
-                                    <option value="BN">Bistrita</option>
-                                    <option value="BR">Braila</option>
-                                    <option value="BT">Botosani</option>
-                                    <option value="BV">Brasov</option>
-                                    <option value="BZ">Buzau</option>
-                                    <option value="CJ">Cluj</option>
-                                    <option value="CL">Calarasi</option>
-                                    <option value="CS">Caras-Severin</option>
-                                    <option value="CT">Constanta</option>
-                                    <option value="CV">Covasna</option>
-                                    <option value="DB">Dambovita</option>
-                                    <option value="DJ">Dolj</option>
-                                    <option value="GJ">Gorj</option>
-                                    <option value="GL">Galati</option>
-                                    <option value="GR">Giurgiu</option>
-                                    <option value="HD">Hunedoara</option>
-                                    <option value="HG">Harghita</option>
-                                    <option value="IF">Ilfov</option>
-                                    <option value="IL">Ialomita</option>
-                                    <option value="IS">Iasi</option>
-                                    <option value="MH">Mehedinti</option>
-                                    <option value="MM">Maramures</option>
-                                    <option value="MS">Mures</option>
-                                    <option value="NT">Neamt</option>
-                                    <option value="OT">Olt</option>
-                                    <option value="PH">Prahova</option>
-                                    <option value="SB">Sibiu</option>
-                                    <option value="SJ">Salaj</option>
-                                    <option value="SM">Satu-Mare</option>
-                                    <option value="SV">Suceava</option>
-                                    <option value="TL">Tulcea</option>
-                                    <option value="TM">Timis</option>
-                                    <option value="TR">Teleorman</option>
-                                    <option value="VL">Valcea</option>
-                                    <option value="VN">Vrancea</option>
-                                    <option value="VS">Vaslui</option>
+                                <select formControlName="state">
+                                    <option *ngFor="let state of shippingAddressStates" [ngValue]="state">
+                                        {{state.name}}
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -145,8 +108,10 @@
                         <div class="col-md-2"><label>Tara</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
-                                <select formControlName="country">
-                                    <option>ROMANIA</option>
+                                <select formControlName="country" (change)="getStates('billingAddress')">
+                                    <option *ngFor="let country of countries" [ngValue]="country">
+                                        {{country.name}}
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -175,48 +140,9 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="state" name="Judet">
-                                    <option value="AB">Alba</option>
-                                    <option value="AG">Arges</option>
-                                    <option value="AR">Arad</option>
-                                    <option value="B">Bucuresti</option>
-                                    <option value="BC">Bacau</option>
-                                    <option value="BH">Bihor</option>
-                                    <option value="BN">Bistrita</option>
-                                    <option value="BR">Braila</option>
-                                    <option value="BT">Botosani</option>
-                                    <option value="BV">Brasov</option>
-                                    <option value="BZ">Buzau</option>
-                                    <option value="CJ">Cluj</option>
-                                    <option value="CL">Calarasi</option>
-                                    <option value="CS">Caras-Severin</option>
-                                    <option value="CT">Constanta</option>
-                                    <option value="CV">Covasna</option>
-                                    <option value="DB">Dambovita</option>
-                                    <option value="DJ">Dolj</option>
-                                    <option value="GJ">Gorj</option>
-                                    <option value="GL">Galati</option>
-                                    <option value="GR">Giurgiu</option>
-                                    <option value="HD">Hunedoara</option>
-                                    <option value="HG">Harghita</option>
-                                    <option value="IF">Ilfov</option>
-                                    <option value="IL">Ialomita</option>
-                                    <option value="IS">Iasi</option>
-                                    <option value="MH">Mehedinti</option>
-                                    <option value="MM">Maramures</option>
-                                    <option value="MS">Mures</option>
-                                    <option value="NT">Neamt</option>
-                                    <option value="OT">Olt</option>
-                                    <option value="PH">Prahova</option>
-                                    <option value="SB">Sibiu</option>
-                                    <option value="SJ">Salaj</option>
-                                    <option value="SM">Satu-Mare</option>
-                                    <option value="SV">Suceava</option>
-                                    <option value="TL">Tulcea</option>
-                                    <option value="TM">Timis</option>
-                                    <option value="TR">Teleorman</option>
-                                    <option value="VL">Valcea</option>
-                                    <option value="VN">Vrancea</option>
-                                    <option value="VS">Vaslui</option>
+                                    <option *ngFor="let state of billingAddressStates" [ngValue]="state">
+                                        {{state.name}}
+                                    </option>                            
                                 </select>
                             </div>
                         </div>
@@ -281,18 +207,9 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="expirationMonth">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
+                                    <option *ngFor="let month of creditCardMonths">
+                                        {{month}}
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -302,17 +219,10 @@
                         <div class="col-md-2"><label>An expirare card</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
-                                <select formControlName="expirationYear">
-                                    <option>2021</option>
-                                    <option>2022</option>
-                                    <option>2023</option>
-                                    <option>2024</option>
-                                    <option>2025</option>
-                                    <option>2026</option>
-                                    <option>2027</option>
-                                    <option>2028</option>
-                                    <option>2029</option>
-                                    <option>2030</option>
+                                <select formControlName="expirationYear" (change)="handleMonthsAndYears()">
+                                    <option *ngFor="let year of creditCardYears">
+                                        {{year}}
+                                    </option>
                                 </select>
                             </div>
                         </div>
