@@ -10,8 +10,9 @@ import { State } from '../common/state';
 })
 export class ChestiiFaineFormService {
 
-  private countriesUrl = 'http://localhost:8080/api/countries';
-  private statesUrl = 'http://localhost:8080/api/states';
+  private countriesUrl = 'http://localhost:8101/gateway/database-service/api/countries';
+
+  private statesUrl = 'http://localhost:8101/gateway/database-service/api/states';
 
   constructor(private httpClient: HttpClient) { }
 
