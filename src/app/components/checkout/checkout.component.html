@@ -21,7 +21,7 @@
                                     </div>
 
                                     <div *ngIf="firstName.errors.minlength">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                     </div>
 
                                     <div *ngIf="lastName.errors.minlength">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                     </div>
 
                                     <div *ngIf="email.errors.pattern">
-                                        Introduceti o adresă de e-mail valabila!
+                                        Introduceți o adresă de e-mail valabilă!
                                     </div>
                                 </div>
 
@@ -75,7 +75,7 @@
                     <h3>Date livrare</h3>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Tara</label></div>
+                        <div class="col-md-2"><label>Țară</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="country" (change)="getStates('shippingAddress')">
@@ -87,7 +87,7 @@
                                 <div *ngIf="shippingAddressCountry.invalid && (shippingAddressCountry.dirty || shippingAddressCountry.touched)"
                                     class="alert alert-danger mt-1">
                                     <div *ngIf="shippingAddressCountry.errors.required">
-                                        Nume tara este obligatoriu!
+                                        Nume țară este obligatoriu!
                                     </div>
                                 </div>
 
@@ -96,7 +96,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Strada</label></div>
+                        <div class="col-md-2"><label>Stradă</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="street" type="text">
@@ -105,10 +105,10 @@
                                     class="alert alert-danger mt-1">
                                     <div
                                         *ngIf="shippingAddressStreet.errors.required || shippingAddressStreet.errors.notOnlyWhiteSpace">
-                                        Nume strada este obligatoriu!
+                                        Nume stradă este obligatoriu!
                                     </div>
                                     <div *ngIf="shippingAddressStreet.errors.minlength">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
                                 </div>
 
@@ -117,7 +117,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Oras</label></div>
+                        <div class="col-md-2"><label>Oraș</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="city" type="text">
@@ -126,10 +126,10 @@
                                     class="alert alert-danger mt-1">
                                     <div
                                         *ngIf="shippingAddressCity.errors.required || shippingAddressCity.errors.notOnlyWhiteSpace">
-                                        Nume oras este obligatoriu!
+                                        Nume oraș este obligatoriu!
                                     </div>
                                     <div *ngIf="firstName.errors.minlength">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
                                 </div>
 
@@ -138,7 +138,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Judet</label></div>
+                        <div class="col-md-2"><label>Județ</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="state">
@@ -150,7 +150,7 @@
                                 <div *ngIf="shippingAddressState.invalid && (shippingAddressState.dirty || shippingAddressState.touched)"
                                     class="alert alert-danger mt-1">
                                     <div *ngIf="shippingAddressState.errors.required">
-                                        Nume judet este obligatoriu!
+                                        Nume județ este obligatoriu!
                                     </div>
                                 </div>
 
@@ -159,7 +159,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Cod postal</label></div>
+                        <div class="col-md-2"><label>Cod poștal</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="zipCode" type="text">
@@ -168,10 +168,10 @@
                                     class="alert alert-danger mt-1">
                                     <div
                                         *ngIf="shippingAddressZipCode.errors.required || shippingAddressZipCode.errors.notOnlyWhiteSpace">
-                                        Codul postal este obligatoriu!
+                                        Codul poștal este obligatoriu!
                                     </div>
                                     <div *ngIf="firstName.errors.minlength">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
                                 </div>
 
@@ -183,7 +183,7 @@
                 <div class="input-space">
                     <label class="au-checkbox">
                         <input type="checkbox" (change)="copyShippingAddressToBillingAddress($event)">
-                        <span class="au-checkmark"></span>Adresa de facturare este aceeasi cu adresa de livrare
+                        <span class="au-checkmark"></span>Adresa de facturare este aceeași cu adresa de livrare
                     </label>
                 </div>
                 <!-- Billing adress -->
@@ -191,7 +191,7 @@
                     <h3>Date de facturare</h3>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Tara</label></div>
+                        <div class="col-md-2"><label>Țară</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="country" (change)="getStates('billingAddress')">
@@ -203,7 +203,7 @@
                                 <div *ngIf="billingAddressCountry.invalid && (billingAddressCountry.dirty || billingAddressCountry.touched)"
                                     class="alert alert-danger mt-1">
                                     <div *ngIf="billingAddressCountry.errors.required">
-                                        Nume tara este obligatoriu!
+                                        Nume țară este obligatoriu!
                                     </div>
                                 </div>
 
@@ -212,7 +212,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Strada</label></div>
+                        <div class="col-md-2"><label>Stradă</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="street" type="text">
@@ -220,10 +220,10 @@
                                     class="alert alert-danger mt-1">
                                     <div
                                         *ngIf="billingAddressStreet.errors.required || billingAddressStreet.errors.notOnlyWhiteSpace">
-                                        Nume strada este obligatoriu!
+                                        Nume stradă este obligatoriu!
                                     </div>
                                     <div *ngIf="firstName.errors.minlength">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
                                 </div>
 
@@ -232,7 +232,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Oras</label></div>
+                        <div class="col-md-2"><label>Oraș</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="city" type="text">
@@ -241,10 +241,10 @@
                                     class="alert alert-danger mt-1">
                                     <div
                                         *ngIf="billingAddressCity.errors.required || billingAddressCity.errors.notOnlyWhiteSpace">
-                                        Nume oras este obligatoriu!
+                                        Nume oraș este obligatoriu!
                                     </div>
                                     <div *ngIf="firstName.errors.minlength">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
                                 </div>
 
@@ -253,7 +253,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Judet</label></div>
+                        <div class="col-md-2"><label>Județ</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="state" name="Judet">
@@ -265,7 +265,7 @@
                                 <div *ngIf="billingAddressState.invalid && (billingAddressState.dirty || billingAddressState.touched)"
                                     class="alert alert-danger mt-1">
                                     <div *ngIf="billingAddressState.errors.required">
-                                        Nume judet este obligatoriu!
+                                        Nume județ este obligatoriu!
                                     </div>
                                 </div>
 
@@ -274,7 +274,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Cod postal</label></div>
+                        <div class="col-md-2"><label>Cod poștal</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="zipCode" type="text">
@@ -283,10 +283,10 @@
                                     class="alert alert-danger mt-1">
                                     <div
                                         *ngIf="billingAddressZipCode.errors.required || billingAddressZipCode.errors.notOnlyWhiteSpace">
-                                        Codul postal este obligatoriu!
+                                        Codul poștal este obligatoriu!
                                     </div>
                                     <div *ngIf="firstName.errors.minlength">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
                                 </div>
 
@@ -299,7 +299,7 @@
                 <!-- Credit card -->
 
                 <div formGroupName="creditCard" class="form-area">
-                    <h3>Plata</h3>
+                    <h3>Plată</h3>
                     <div class="row">
                         <div class="col-md-2"><label>Tip card</label></div>
                         <div class="col-md-9">
@@ -334,7 +334,7 @@
                                     </div>
 
                                     <div *ngIf="creditCardNameOnCard.errors.minlength ">
-                                        Introduceti minim 2 caractere!
+                                        Introduceți minim 2 caractere!
                                     </div>
 
                                 </div>
@@ -344,7 +344,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Nr card</label></div>
+                        <div class="col-md-2"><label>Nr. card</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="cardNumber" type="text">
@@ -352,10 +352,10 @@
                                 <div *ngIf="creditCardNumber.invalid && (creditCardNumber.dirty || creditCardNumber.touched)"
                                     class="alert alert-danger mt-1">
                                     <div *ngIf="creditCardNumber.errors.required">
-                                        Numar card este obligatoriu!
+                                        Număr card este obligatoriu!
                                     </div>
                                     <div *ngIf="creditCardNumber.errors.pattern">
-                                        Numar card trebuie sa fie fromat din 16 cifre!
+                                        Număr card trebuie să fie format din 16 cifre!
                                     </div>
                                 </div>
 
@@ -375,7 +375,7 @@
                                         Cod securitate este obligatoriu!
                                     </div>
                                     <div *ngIf="creditCardSecurityCode.errors.pattern">
-                                        Cod securitate trebuie sa fie format din 3 cifre!
+                                        Cod securitate trebuie să fie format din 3 cifre!
                                     </div>
                                 </div>
 
@@ -384,7 +384,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"><label>Luna expirare</label></div>
+                        <div class="col-md-2"><label>Lună expirare</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="expirationMonth">
@@ -414,11 +414,14 @@
 
                 <!-- Order details -->
                 <div class="form-area">
-                    <h3>Sumar comanda</h3>
+                    <h3>Sumar comandă</h3>
 
                     <p>Total cantitate : {{totalQuantity}}</p>
-                    <p>Livrare gratuita</p>
-                    <p>Pret Total: {{totalPrice }} RON</p>
+                    <p>Livrare prin curier: <br/>
+                         - gratuită pentru comenzi cu valoare de minim 200 RON <br/>
+                         - 15 RON pentru comenzi cu valoare mai mică de 200 RON
+                    </p>
+                    <p>Preț Total: {{totalPrice }} RON</p>
                 </div>
 
 

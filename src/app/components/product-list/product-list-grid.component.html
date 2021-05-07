@@ -17,19 +17,19 @@
                         </a>
 
                         <div class="price">{{tempProduct.unitPrice }} RON</div>
-                        <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Adauga in cos</button>
+                        <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Adaugă în coș</button>
                     </div>
 
                 </div>
                 <!-- if products are emptythen display a message -->
                 <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12" role="alert">
-                    Nu au fost gasite produse!
+                    Nu au fost găsite produse!
                     <pre></pre>
-                    Pentru a gasi produsul dorit, incearca urmatoarele:
+                    Pentru a găsi produsul dorit, încearcă următoarele:
                     <pre></pre>
-                    * Verifica daca ai scris corect termenii.
+                    * Verifică dacă ai scris corect termenii.
                     <pre></pre>
-                    * Incearca din nou, folosind o cautare mai generala.
+                    * Încearcă din nou, folosind o căutare mai generală.
 
                 </div>
 
@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="col-md-3 mt-2" style="text-align: right;">
-                                <span class="mr-2">Produse/pagina</span>
+                                <span class="mr-2">Produse/pagină</span>
 
                                 <select #t (change)="updatePageSize(t.value)">
                                     <option>2</option>

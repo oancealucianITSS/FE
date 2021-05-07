@@ -4,9 +4,9 @@
         Salut, {{userFullName}}!
     </div>
 
-    <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn">Intra in cont</button>
+    <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn">Intră în cont<br/> Și vezi promoțiile!</button>
 
-    <button *ngIf="isAuthenticated" (click)="logout()"  class="security-btn">Iesire din cont</button>
+    <button *ngIf="isAuthenticated" (click)="logout()"  class="security-btn">Ieșire din cont</button>
 
     <button  *ngIf="isAuthenticated" routerLink="/members"  class="security-btn ml-1">Membru chestiifaine.ro</button>
 </div>

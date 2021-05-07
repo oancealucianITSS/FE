@@ -41,16 +41,19 @@
                                     <div class="col-8"></div>
                                 </div>
                             </div>
-                            <button (click)="remove(tempCartItem)" class="btn btn-primary btn-sm mt-2">Sterge</button>
+                            <button (click)="remove(tempCartItem)" class="btn btn-primary btn-sm mt-2">Șterge</button>
                             <p class="mt-2">Subtotal: {{tempCartItem.quantity * tempCartItem.unitPrice }} RON</p>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>
                         <td style="font-weight: bold">
-                            <p>Pret total: {{totalPrice}} RON</p>
-                            <p>Cantitate totala: {{totalQuantity}}</p>
-                            <p>Livrare gratuita</p>
+                            <p>Preț total: {{totalPrice}} RON</p>
+                            <p>Cantitate totală: {{totalQuantity}}</p>
+                            <p>Livrare prin curier : <br/>
+                                - gratuită pentru comenzi cu valoare de minim 200 RON <br/>
+                                - 15 RON pentru comenzi cu valoare mai mică de 200 RON
+                           </p>
                             <a routerLink="/checkout" class="btn btn-primary">Finalizarea comenzii</a>
                         </td>
                     </tr>
@@ -60,7 +63,7 @@
 
             <!-- if cart is empty then display amessage -->
             <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="alert">
-                Cosul tau de cumparaturi este gol.
+                Coșul tău de cumpărături este gol.
             </div>
         </div>
     </div>
